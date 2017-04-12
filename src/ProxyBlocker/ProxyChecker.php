@@ -6,8 +6,7 @@ use pocketmine\scheduler\AsyncTask;
 use pocketmine\Server;
 use pocketmine\utils\TextFormat as TF;
 
-class ProxyChecker extends AsyncTask
-{
+class ProxyChecker extends AsyncTask {
 
     private $data;
 
