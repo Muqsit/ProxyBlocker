@@ -8,7 +8,8 @@ class Main extends PluginBase {
 
     private $server, $email;
 
-    public function onEnable() {
+    public function onEnable()
+    {
         if(!file_exists($this->getDataFolder() . "config.yml")) {
             @mkdir($this->getDataFolder());
             file_put_contents($this->getDataFolder() . "config.yml", $this->getResource("config.yml"));
@@ -21,7 +22,8 @@ class Main extends PluginBase {
         $this->email = yaml_parse_file($this->getDataFolder()."config.yml")["email"] ?? $random;
     }
     
-    public function checkForProxy(Player $player) {
+    public function checkForProxy(Player $player)
+    {
         $this->server->getScheduler()->scheduleAsyncTask(new ProxyChecker([$player->getAddress(), $player->getName(), $this->email]));
     }
 }
